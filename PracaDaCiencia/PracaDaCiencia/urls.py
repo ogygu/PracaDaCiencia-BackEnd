@@ -39,7 +39,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('Tecnicos/', CriarTecnico.as_view(), name='tecnicos-create'),  # Define a URL para criar TRécnicos
-    path('/Filtrar/', filtrar_tecnicos, name='tecnicos-filtro'),  # Define a URL para filtrar Técnicos
+    path('filtrar_tecnicos/', filtrar_tecnicos, name='filtrar_tecnicos'),
     path('', lambda request: redirect('/swagger/')), #Redireciona para o Swagger
     path('admin/', admin.site.urls),
      # Rotas do Swagger (Especificações)
