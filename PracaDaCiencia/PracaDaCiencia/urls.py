@@ -21,7 +21,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.shortcuts import redirect
 from rest_framework.response import Response
-from .views import CriarTecnico
+from .views import CriarTecnico, filtrar_tecnicos
 from .models import Tecnico
 
 schema_view = get_schema_view(
@@ -39,7 +39,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('Tecnicos/', CriarTecnico.as_view(), name='tecnicos-create'),  # Define a URL para criar TRécnicos
-    path('Tecnicos/', CriarTecnico.as_view(), name='tecnicos-create'),  # Define a URL para criar TRécnicos
+    path('/Filtrar/', filtrar_tecnicos, name='tecnicos-filtro'),  # Define a URL para filtrar Técnicos
     path('', lambda request: redirect('/swagger/')), #Redireciona para o Swagger
     path('admin/', admin.site.urls),
      # Rotas do Swagger (Especificações)

@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from django.db.models import Value
+from django.db.models.functions import Concat
 
 '''
 Tipo de Campo	
@@ -41,7 +43,10 @@ class Tecnico(models.Model):
     lastName = models.CharField(max_length=60)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=16)
+    name = Concat('firstName', Value(' '), 'lastName')
 
     def __str__(self):
         return f"{self.firstName} {self.lastName}"
+
+
 

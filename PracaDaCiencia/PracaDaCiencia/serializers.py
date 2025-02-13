@@ -6,7 +6,8 @@ class TecnicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tecnico
         fields = '__all__'
-    tecnicoFiltrado = serializers.SerializerMethodField()
+    
+
 
 
     
