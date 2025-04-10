@@ -1,1 +1,7 @@
 .venv/
+/migrations
+.sqlite3
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
